@@ -28,6 +28,7 @@ namespace RuletaWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<RouletteContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnectionTest")));
+            services.AddRazorPages();
             services.AddControllers();
         }
 
@@ -48,6 +49,10 @@ namespace RuletaWebAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
             });
         }
     }

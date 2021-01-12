@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RuletaWebAPI.Migrations
 {
-    public partial class MigrationRoulette : Migration
+    public partial class RouletteDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,10 @@ namespace RuletaWebAPI.Migrations
                     PlayedValue = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StakeValue = table.Column<double>(type: "float", nullable: false),
                     BetType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IdRoulette = table.Column<int>(type: "int", nullable: false)
+                    IdRoulette = table.Column<int>(type: "int", nullable: false),
+                    User = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    State = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ObtainedValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -30,7 +33,8 @@ namespace RuletaWebAPI.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     State = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    CreationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    WinningNumber = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

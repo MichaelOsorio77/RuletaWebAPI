@@ -10,8 +10,8 @@ using RuletaWebAPI.Data;
 namespace RuletaWebAPI.Migrations
 {
     [DbContext(typeof(RouletteContext))]
-    [Migration("20210111193105_MigrationRoulette")]
-    partial class MigrationRoulette
+    [Migration("20210112172205_RouletteDB")]
+    partial class RouletteDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,11 +34,20 @@ namespace RuletaWebAPI.Migrations
                     b.Property<int>("IdRoulette")
                         .HasColumnType("int");
 
+                    b.Property<string>("ObtainedValue")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PlayedValue")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("StakeValue")
                         .HasColumnType("float");
+
+                    b.Property<string>("State")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("User")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -57,6 +66,9 @@ namespace RuletaWebAPI.Migrations
 
                     b.Property<string>("State")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("WinningNumber")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

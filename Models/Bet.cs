@@ -14,5 +14,8 @@ namespace RuletaWebAPI.Models
         public string BetType { get; set; }
         [ForeignKey("FK_Roulette")]
         public int IdRoulette { get; set; }
+        public string User { get; set; }
+        public string State { get; set; }
+        public string ObtainedValue { get; set; }
     }
 }

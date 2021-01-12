@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "BetDetails";
+}
+
+<html>
+<head>
+</head>
+<body>
+    <h2>@ViewData["Header"]</h2>
+    <form method="post">
+        <label for="BetType">Tipo de Apuesta (Color - Valor)</label>
+        <input type="text" name="BetType" />
+        <br />
+        <label for="StakeValue">Apuesta: Rojo - Negro o 0-36</label>
+        <input type="text" name="StakeValue" />
+        <br />
+        <label for="PlayedValue">Valor a Apostar</label>
+        <input type="text" name="PlayedValue" />
+        <br />
+        <input type="hidden" name="IdRoulette" value="@ViewData["idRoulette"]" />
+        <br />
+        <input type="submit" value="Enviar Apuesta">
+    </form>
+</body>
+</html>
+

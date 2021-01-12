@@ -10,5 +10,6 @@ namespace RuletaWebAPI.Models
         public int Id { get; set; }
         public string State { get; set; }
         public DateTime CreationDate { get; set; }
+        public int? WinningNumber { get; set; }
     }
 }

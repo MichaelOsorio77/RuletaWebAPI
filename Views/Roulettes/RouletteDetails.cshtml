@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "RouletteDetails";
+}
+<html>
+<head></head>
+<body>
+    <h2>@ViewData["Header"]</h2>
+    <table border="1">
+        <tr>
+            <td>
+                <h3>Estado</h3>
+            </td>
+            <td>
+                <h3>Fecha Creacion</h3>
+            </td>
+            <td>
+                <h3>Acción</h3>
+            </td>
+        </tr>
+        @{
+            var RouletteList = ViewData["Roulette"] as List<RuletaWebAPI.Models.Roulette>;
+            foreach (var roulette in RouletteList)
+            {
+                <tr>
+                    <td>
+                        @roulette.State
+                    </td>
+                    <td>
+                        @roulette.CreationDate
+                    </td>
+                    <td>
+                        <div><a href="/api/bets/@roulette.Id">Abrir Ruleta</a></div>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <br />
+    <br />
+    <form method="post">
+        <input type="submit" value="Crear Ruleta" />
+    </form>
+</body>
+</html>
+

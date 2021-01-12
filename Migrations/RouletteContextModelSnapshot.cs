@@ -32,11 +32,20 @@ namespace RuletaWebAPI.Migrations
                     b.Property<int>("IdRoulette")
                         .HasColumnType("int");
 
+                    b.Property<string>("ObtainedValue")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PlayedValue")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("StakeValue")
                         .HasColumnType("float");
+
+                    b.Property<string>("State")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("User")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -55,6 +64,9 @@ namespace RuletaWebAPI.Migrations
 
                     b.Property<string>("State")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("WinningNumber")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
